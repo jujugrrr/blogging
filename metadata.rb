@@ -1,8 +1,8 @@
 name             'blogging'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
-license          'All rights reserved'
-description      'Installs/Configures blogging'
-long_description 'Installs/Configures blogging'
+maintainer       'Julien Berard'
+maintainer_email 'jujugrrr@gmail.com'
+license          'Apache 2.0'
+description      'Installs/Configures blogging platform'
+long_description 'installs a blogging platform, based on nginx, php, wordpress, pure-ftpd, mysql and phpmyadmin
+'
 version          '0.1.0'
-
