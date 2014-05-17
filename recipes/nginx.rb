@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: blogging
-# Recipe:: default
+# Recipe:: nginx
 # Author ; Julien Berard <jujugrrr@gmail.com>
 # Copyright (C) 2014 Julien Berard
 #
@@ -17,4 +17,18 @@
 # limitations under the License.
 ##
 
-include_recipe "blogging::nginx"
+#resources("template[#{node['rackspace_nginx']['config']['dir']}/sites-available/default]").cookbook "blogging"
+include_recipe "rackspace_nginx"
+
+#Set up webroot
+directory node['blogging']['nginx']['root'] do
+  action :create
+  owner node['rackspace_nginx']['config']['user']
+  group node['rackspace_nginx']['config']['user']
+end
+
+file File.join(node['blogging']['nginx']['root'], 'index.php') do
+  content '<?php echo "Hello" ?>'
+  owner node['rackspace_nginx']['config']['user']
+  group node['rackspace_nginx']['config']['user']
+end
