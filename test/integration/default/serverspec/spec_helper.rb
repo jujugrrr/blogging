@@ -20,7 +20,7 @@ def http_request(uri, ip = '127.0.0.1')
   http.request(request)
 end
 
-def ftp_write(ip = '127.0.0.1', user = 'user1', password = 'password1', dir = '/opt/www/test')
+def ftp_write(ip = '127.0.0.1', user = 'user1', password = 'password1', dir = 'test')
   ftp = Net::FTP.new(ip,user,password)
   permission = !! ftp.mkdir(dir)
   ftp.rmdir(dir)
