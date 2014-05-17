@@ -9,3 +9,4 @@ version          '0.1.0'
 
 depends 'rackspace_nginx'
 depends 'rackspace_php'
+depends 'pure-ftpd'
