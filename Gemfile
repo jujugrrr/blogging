@@ -7,4 +7,6 @@ group :development do
   gem 'kitchen-vagrant'
   gem 'guard'
   gem 'guard-kitchen'
+  gem 'chefspec'
+  gem 'guard-rspec'
 end
