@@ -9,5 +9,8 @@ describe 'blogging::default' do
     it 'include blogging::php-fpm recipe' do
       expect(chef_run).to include_recipe('blogging::php-fpm')
     end
+    it 'include blogging::pure-ftpd recipe' do
+      expect(chef_run).to include_recipe('blogging::pure-ftpd')
+    end
 
 end

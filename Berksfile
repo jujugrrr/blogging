@@ -6,3 +6,4 @@ cookbook "rackspace_nginx", git: "https://github.com/rackspace-cookbooks/rackspa
 cookbook "rackspace_php", git: "https://github.com/jujugrrr/rackspace_php.git"
 cookbook "rackspace_apt", git: "https://github.com/rackspace-cookbooks/rackspace_apt.git"
 cookbook "rackspace_yum", git: "https://github.com/rackspace-cookbooks/rackspace_yum.git"
+cookbook "pure-ftpd", git: "https://github.com/fabn/chef-pure-ftpd.git", branch: "aef9a916d294639e457f389f0fae25ffaf0c2308"
