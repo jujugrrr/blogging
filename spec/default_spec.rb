@@ -6,10 +6,8 @@ describe 'blogging::default' do
     it 'include blogging::nginx recipe' do
       expect(chef_run).to include_recipe('blogging::nginx')
     end
-    it 'include rackspace_php recipe' do
-      expect(chef_run).to include_recipe('rackspace_php::default')
+    it 'include blogging::php-fpm recipe' do
+      expect(chef_run).to include_recipe('blogging::php-fpm')
     end
-    it 'include rackspace_php::fpm recipe' do
-       expect(chef_run).to include_recipe('rackspace_php::fpm')
-    end
+
 end

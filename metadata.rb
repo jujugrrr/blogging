@@ -8,3 +8,4 @@ long_description 'installs a blogging platform, based on nginx, php, wordpress, 
 version          '0.1.0'
 
 depends 'rackspace_nginx'
+depends 'rackspace_php'
