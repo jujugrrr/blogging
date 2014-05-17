@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: blogging
-# Recipe:: default
+# Recipe:: nginx
 # Author ; Julien Berard <jujugrrr@gmail.com>
 # Copyright (C) 2014 Julien Berard
 #
@@ -17,6 +17,4 @@
 # limitations under the License.
 ##
 
-include_recipe "blogging::nginx"
-include_recipe "blogging::php-fpm"
-include_recipe "blogging::pure-ftpd"
+include_recipe "pure-ftpd::default"
