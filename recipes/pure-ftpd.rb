@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: blogging
-# Recipe:: nginx
+# Recipe:: pure-ftpd
 # Author ; Julien Berard <jujugrrr@gmail.com>
 # Copyright (C) 2014 Julien Berard
 #

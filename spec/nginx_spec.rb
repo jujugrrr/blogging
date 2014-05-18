@@ -8,12 +8,12 @@ describe 'blogging::nginx' do
       expect(chef_run).to include_recipe('rackspace_nginx::default')
     end
 
-    it 'create a config file for blogging' do
+    it 'creates a config file for blogging' do
       expect(chef_run).to render_file('/etc/nginx/sites-available/default').with_content('root /opt/www;')
       expect(chef_run).to render_file('/etc/nginx/sites-available/default').with_content('server_name pikachoun.localdomain;')
     end
 
-    it "create the root directory" do
+    it "creates the root directory" do
       expect(chef_run).to create_directory('/opt/www')
     end
     it 'creates an hello world' do
