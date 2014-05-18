@@ -60,3 +60,11 @@ describe 'Database server' do
   end
 
 end
+
+describe 'Wordpress' do
+
+  it "i can login" do
+    expect(mysql_login?({:host => "localhost", :username => "TestWordUser", :password => "TestWordPassword"})).to be_true
+  end
+
+end
