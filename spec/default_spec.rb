@@ -12,5 +12,8 @@ describe 'blogging::default' do
     it 'include blogging::pure-ftpd recipe' do
       expect(chef_run).to include_recipe('blogging::pure-ftpd')
     end
+    it 'include blogging::mysql recipe' do
+      expect(chef_run).to include_recipe('blogging::mysql')
+    end
 
 end
