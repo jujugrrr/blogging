@@ -17,8 +17,8 @@
 # limitations under the License.
 ##
 
-include_recipe "blogging::wordpress"
-include_recipe "blogging::php-fpm"
-include_recipe "blogging::nginx"
 include_recipe "blogging::mysql"
+include_recipe "blogging::php-fpm"
+include_recipe "blogging::wordpress"
+include_recipe "blogging::nginx"
 include_recipe "blogging::pure-ftpd"

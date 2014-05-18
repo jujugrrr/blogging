@@ -18,4 +18,9 @@ describe 'blogging::wordpress' do
       expect(chef_run).to render_file('/opt/www/wordpress/wp-config.php').with_content('WordPress')
     end
 
+    #required because wordpress install phpmysql module
+    it 'restart php5-fpm service' do
+      expect(chef_run).to restart_service('php5-fpm')
+    end
+
 end
