@@ -3,6 +3,14 @@ require 'pathname'
 require 'net/http'
 require 'net/ftp'
 
+begin
+  Gem::Specification.find_by_name('mysql2')
+rescue Gem::LoadError
+  require 'rubygems/dependency_installer'
+  Gem::DependencyInstaller.new(Gem::DependencyInstaller::DEFAULT_OPTIONS).install('mysql2')
+end
+require 'mysql2'
+
 
 include Serverspec::Helper::Exec
 include Serverspec::Helper::DetectOS
@@ -26,4 +34,13 @@ def ftp_write(ip = '127.0.0.1', user = 'user1', password = 'password1', dir = 't
   ftp.rmdir(dir)
   ftp.close
   permission
+end
+
+def mysql_login?(options = {:host => "localhost", :username => "root", :password => "aaa"})
+  !! Mysql2::Client.new(options)
+end
+
+def mysql_is_db_there?(dbname = 'wordpress', options = {:host => "localhost", :username => "root", :password => "aaa"})
+  client = Mysql2::Client.new(options)
+  !client.query("show databases").select { |db| db["Database"] == dbname}.empty?
 end
