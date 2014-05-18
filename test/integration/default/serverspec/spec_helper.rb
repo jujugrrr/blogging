@@ -40,7 +40,7 @@ def mysql_login?(options = {:host => "localhost", :username => "root", :password
   !! Mysql2::Client.new(options)
 end
 
-def mysql_is_db_there?(dbname = 'wordpress', options = {:host => "localhost", :username => "root", :password => "aaa"})
+def mysql_is_db_there?(dbname = 'TestWordDB', options = {:host => "localhost", :username => "root", :password => "TestRootPassword"})
   client = Mysql2::Client.new(options)
   !client.query("show databases").select { |db| db["Database"] == dbname}.empty?
 end
