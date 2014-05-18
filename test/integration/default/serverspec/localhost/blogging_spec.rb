@@ -40,3 +40,23 @@ describe 'FTP server' do
   end
 
 end
+
+describe 'Database server' do
+
+  describe port(3306) do
+    it { should be_listening }
+  end
+  describe process('mysqld') do
+    it { should be_running }
+  end
+  it "i can login" do
+    expect(mysql_login?).to be_true
+  end
+  it "the wordpress DB is there" do
+    expect(mysql_is_db_there?('wordpress')).to be_true
+  end
+  it "the phpmyadmin DB is there" do
+    expect(mysql_is_db_there?('phpmyadmin')).to be_true
+  end
+
+end

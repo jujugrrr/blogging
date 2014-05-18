@@ -36,7 +36,7 @@ def ftp_write(ip = '127.0.0.1', user = 'user1', password = 'password1', dir = 't
   permission
 end
 
-def mysql_login?(options = {:host => "localhost", :username => "root", :password => "aaa"})
+def mysql_login?(options = {:host => "localhost", :username => "root", :password => "TestRootPassword"})
   !! Mysql2::Client.new(options)
 end
 
