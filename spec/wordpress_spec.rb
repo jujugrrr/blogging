@@ -15,7 +15,7 @@ describe 'blogging::wordpress' do
     end
 
     it 'creates a config file for wordpress' do
-      expect(chef_run).to render_file('/opt/www/wp-config.php').with_content('WordPress')
+      expect(chef_run).to render_file('/opt/www/wordpress/wp-config.php').with_content('WordPress')
     end
 
 end
