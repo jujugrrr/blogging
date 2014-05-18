@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: blogging
-# Recipe:: nginx
+# Recipe:: php-fpm
 # Author ; Julien Berard <jujugrrr@gmail.com>
 # Copyright (C) 2014 Julien Berard
 #
@@ -16,6 +16,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ##
+
+node.set['rackspace_php']['fpm']['enabled'] = true
 
 include_recipe "rackspace_php"
 include_recipe "rackspace_php::fpm"
