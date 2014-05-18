@@ -20,7 +20,8 @@ describe 'Web server' do
 
   describe 'should return a HTTP 200' do
     it do
-      response = http_request('http://pikachoun.localdomain/index.php')
+      response = http_request('http://pikachoun.localdomain/wordpress/wp-admin/install.php
+')
       expect(response.code).to eq '200'
     end
   end
@@ -52,19 +53,24 @@ describe 'Database server' do
   it "i can login" do
     expect(mysql_login?).to be_true
   end
-  it "the wordpress DB is there" do
-    expect(mysql_is_db_there?).to be_true
-  end
-  it "the phpmyadmin DB is there" do
-    expect(mysql_is_db_there?('phpmyadmin')).to be_true
-  end
 
 end
 
 describe 'Wordpress' do
+  it "the wordpress DB is there" do
+    expect(mysql_is_db_there?).to be_true
+  end
 
-  it "i can login" do
+  it "i can login as Wordpress user" do
     expect(mysql_login?({:host => "localhost", :username => "TestWordUser", :password => "TestWordPassword"})).to be_true
   end
 
+end
+
+describe 'PhpMyAdmin' do
+  describe "the phpmyadmin DB is there" do
+    #TODO
+    it "is a pending example"
+    #  expect(mysql_is_db_there?('phpmyadmin')).to be_true
+  end
 end
