@@ -27,3 +27,7 @@ suites:
     run_list:
       - recipe[blogging::default]
     attributes:
+      rackspace_mysql:
+        server_debian_password: 'TestDebianPassword'
+        server_root_password: 'TestRootPassword'
+        server_repl_password: 'TestReplicationPassword'
