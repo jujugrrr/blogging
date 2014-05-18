@@ -2,5 +2,5 @@ require 'chefspec'
 require 'chefspec/berkshelf'
 
 RSpec.configure do |config|
-  config.log_level = :warn
+  config.log_level = :debug
 end
