@@ -31,3 +31,8 @@ suites:
         server_debian_password: 'TestDebianPassword'
         server_root_password: 'TestRootPassword'
         server_repl_password: 'TestReplicationPassword'
+      wordpress:
+        db:
+          name: 'TestWordDB'
+          user: 'TestWordUser'
+          pass: 'TestWordPassword'
