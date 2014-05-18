@@ -17,4 +17,13 @@
 # limitations under the License.
 ##
 
+#set users parameter to our webuser parameter
+web_ftp_user = [{
+    :home => node['blogging']['nginx']['root'],
+    :system_user => node['rackspace_nginx']['config']['user'],
+    :system_group => node['rackspace_nginx']['config']['user']
+}]
+
+node.set[:pure_ftpd][:users] = [node[:pure_ftpd][:users].first.merge(web_ftp_user.first)]
+
 include_recipe "pure-ftpd::default"
